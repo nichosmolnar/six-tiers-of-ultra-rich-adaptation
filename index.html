@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Six Tiers of the Ultra-Rich</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #1a1446;
+        --bg-2: #221a5c;
+        --panel: #2a2170;
+        --ink: #f4f1ff;
+        --ink-dim: #b9b2e3;
+        --line: rgba(255, 255, 255, 0.14);
+        --headline: #f7d9b0;
+        --radius: 14px;
+        color-scheme: dark;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      html,
+      body {
+        margin: 0;
+        background: radial-gradient(1200px 600px at 20% -10%, #2d2380 0%, transparent 60%), var(--bg);
+        color: var(--ink);
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+        min-height: 100vh;
+      }
+
+      a {
+        color: #8fd3ff;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+      }
+
+      .masthead {
+        padding: 32px clamp(16px, 4vw, 56px) 8px;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      @media (min-width: 900px) and (min-aspect-ratio: 1/1) {
+        .masthead {
+          max-width: none;
+          padding-left: var(--plot-left, clamp(16px, 4vw, 56px));
+        }
+      }
+
+      .masthead h1 {
+        font-family: "Bebas Neue", Impact, sans-serif;
+        font-weight: 400;
+        font-size: clamp(40px, 6vw, 76px);
+        letter-spacing: 0.01em;
+        line-height: 0.95;
+        margin: 0 0 12px;
+        color: var(--headline);
+      }
+
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 12px 24px;
+        margin-top: 14px;
+      }
+
+      .toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 13px;
+        color: var(--ink-dim);
+      }
+
+      .toggle span {
+        margin-right: 4px;
+      }
+
+      .toggle button {
+        font: inherit;
+        font-size: 13px;
+        padding: 7px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: transparent;
+        color: var(--ink);
+        cursor: pointer;
+      }
+
+      .toggle button.active {
+        background: var(--ink);
+        color: var(--bg);
+        border-color: var(--ink);
+      }
+
+      main {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 8px clamp(8px, 2vw, 32px) 0;
+      }
+
+      .chart {
+        width: 100%;
+        position: relative;
+      }
+
+      .chart svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+      }
+
+      .hint {
+        text-align: center;
+        color: var(--ink-dim);
+        font-size: 12px;
+        margin: 4px 0 0;
+      }
+
+      /* Chart pieces */
+      .band {
+        cursor: pointer;
+      }
+
+      .band:focus {
+        outline: none;
+      }
+
+      .band-bg {
+        fill-opacity: 0.07;
+        stroke-opacity: 0.35;
+        transition: fill-opacity 0.15s, stroke-opacity 0.15s;
+      }
+
+      .band-bg.empty {
+        fill-opacity: 0.03;
+        stroke-opacity: 0.8;
+      }
+
+      .band:hover .band-bg {
+        fill-opacity: 0.13;
+        stroke-opacity: 0.7;
+      }
+
+      .band:focus-visible .band-bg {
+        stroke-opacity: 1;
+        stroke-width: 2;
+      }
+
+      .band text {
+        pointer-events: none;
+        transition: opacity 0.15s;
+      }
+
+      .band.off .band-bg {
+        fill-opacity: 0.015;
+        stroke-opacity: 0.15;
+        stroke-dasharray: 4 4;
+      }
+
+      .band.off text {
+        opacity: 0.35;
+      }
+
+      .band-label {
+        font-family: Inter, sans-serif;
+        font-weight: 700;
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .band-range {
+        font-weight: 600;
+        font-size: 13px;
+      }
+
+      .band-buys {
+        font-size: 11px;
+        fill: var(--ink-dim);
+      }
+
+      .axis text {
+        fill: var(--ink-dim);
+        font-size: 12px;
+        font-family: Inter, sans-serif;
+      }
+
+      .axis path,
+      .axis line {
+        stroke: var(--line);
+      }
+
+      .axis-title {
+        fill: var(--ink-dim);
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .bubble {
+        cursor: pointer;
+        transition: opacity 0.2s;
+      }
+
+      .bubble .ring {
+        fill: none;
+        stroke-width: 2.5;
+      }
+
+      .bubble .bg {
+        stroke: none;
+      }
+
+      .bubble .halo {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 2;
+        display: none;
+      }
+
+      .bubble.labeled .halo {
+        display: inline;
+      }
+
+      .bubble .initials {
+        font-family: Inter, sans-serif;
+        font-weight: 700;
+        fill: #1a1446;
+        pointer-events: none;
+        text-anchor: middle;
+        dominant-baseline: central;
+      }
+
+      .bubble.off {
+        opacity: 0.08;
+        pointer-events: none;
+      }
+
+      .bubble:focus {
+        outline: none;
+      }
+
+      .bubble:focus-visible .ring {
+        stroke: #fff !important;
+        stroke-width: 4;
+      }
+
+      .name-label {
+        font-size: 11px;
+        font-weight: 600;
+        fill: var(--ink);
+        text-anchor: middle;
+        pointer-events: none;
+        paint-order: stroke;
+        stroke: var(--bg);
+        stroke-width: 3px;
+      }
+
+      .name-label.off {
+        opacity: 0.1;
+      }
+
+      .frontier-note {
+        fill: var(--ink-dim);
+        font-size: 11px;
+        font-style: italic;
+      }
+
+      /* Tooltip */
+      .tooltip {
+        position: fixed;
+        z-index: 10;
+        pointer-events: none;
+        width: 280px;
+        background: #110d33f2;
+        border: 1.5px solid var(--c, #fff);
+        border-radius: var(--radius);
+        padding: 14px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      .tooltip .tt-head {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .tooltip img,
+      .tooltip .tt-initials {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--c, #fff);
+        flex: none;
+      }
+
+      .tooltip .tt-initials {
+        display: grid;
+        place-items: center;
+        background: var(--c);
+        color: #1a1446;
+        font-weight: 700;
+        font-size: 18px;
+      }
+
+      .tooltip .tt-name {
+        font-weight: 700;
+        font-size: 16px;
+      }
+
+      .tooltip .tt-worth {
+        font-family: "Bebas Neue", Impact, sans-serif;
+        font-size: 28px;
+        color: var(--c);
+        line-height: 1;
+      }
+
+      .tooltip dl {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 3px 10px;
+        margin: 0;
+      }
+
+      .tooltip dt {
+        color: var(--ink-dim);
+      }
+
+      .tooltip dd {
+        margin: 0;
+      }
+
+      .tooltip .tt-tier {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--c);
+      }
+
+      .tooltip .tt-note {
+        margin-top: 8px;
+        color: var(--ink-dim);
+        font-size: 11px;
+      }
+
+      .footer {
+        max-width: 1000px;
+        margin: 24px auto 0;
+        padding: 16px clamp(16px, 4vw, 56px) 40px;
+        border-top: 1px solid var(--line);
+        color: var(--ink-dim);
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      .inspiration {
+        margin: 0 0 16px;
+        padding: 12px 16px;
+        border-left: 3px solid var(--ink);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--ink);
+        font-size: 14px;
+      }
+
+      .inspiration a {
+        color: inherit;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="masthead">
+      <h1>Six Tiers of the Ultra-Rich</h1>
+    </header>
+
+    <main>
+      <div id="chart" class="chart" aria-label="Bubble chart of net worth by tier"></div>
+      <section class="controls" aria-label="Chart controls">
+        <div class="toggle" data-control="size" role="group" aria-label="Bubble size">
+          <span>Bubble size</span>
+          <button type="button" data-value="equal" aria-pressed="false">Equal</button>
+          <button type="button" data-value="worth" class="active" aria-pressed="true">By net worth</button>
+        </div>
+      </section>
+      <p class="hint">Click a tier band to hide or show it. Hover or tap a bubble for details.</p>
+    </main>
+
+    <div id="tooltip" class="tooltip" role="status" aria-live="polite" hidden></div>
+
+    <footer class="footer" id="footer">
+      <p class="inspiration">
+        <strong>Adapted from</strong>
+        <a href="https://sreenet.substack.com/p/the-fair-share-podcast-episode-1" target="_blank" rel="noopener">The Fair Share Podcast, Episode 1</a>,
+        the direct source of inspiration for this chart.
+      </p>
+      <p>
+        <strong>Data:</strong>
+        <a href="https://www.kaggle.com/datasets/kanchana1990/global-billionaire-wealth-to-gdp-2026" target="_blank" rel="noopener">Global Billionaire Wealth to GDP 2026</a>
+        by Kanchana1990 (Forbes Real-Time Billionaires plus World Bank GDP), licensed
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>.
+        Billionaire values are as of <span id="as-of">April 2026</span>.
+      </p>
+      <p>
+        People worth under $1B are not in any billionaire list; their values are rounded public
+        estimates, shown with their own source and date in the tooltip. Values marked
+        "override" replace the Forbes figure.
+      </p>
+      <p>
+        <strong>Images:</strong> portraits from Wikipedia / Wikimedia Commons (various free
+        licenses; see each file's page) and the
+        <a href="https://github.com/open-numbers/ddf--gapminder--billionaires" target="_blank" rel="noopener">Gapminder billionaires dataset</a>
+        (<a href="data/img/credits.json" target="_blank" rel="noopener">per-image sources</a>).
+        Tier concept after the "Six Tiers of the Ultra-Rich" infographic. Non-commercial project.
+      </p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

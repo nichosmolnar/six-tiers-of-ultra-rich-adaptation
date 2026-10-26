@@ -1,0 +1,550 @@
+{
+  "elon-musk": {
+    "source": "Gapminder",
+    "url": "https://github.com/open-numbers/ddf--gapminder--billionaires"
+  },
+  "larry-page": {
+    "source": "Gapminder",
+    "url": "https://github.com/open-numbers/ddf--gapminder--billionaires"
+  },
+  "jeff-bezos": {
+    "source": "Gapminder",
+    "url": "https://github.com/open-numbers/ddf--gapminder--billionaires"
+  },
+  "sergey-brin": {
+    "source": "Gapminder",
+    "url": "https://github.com/open-numbers/ddf--gapminder--billionaires"
+  },
+  "mark-zuckerberg": {
+    "source": "Gapminder",
+    "url": "https://github.com/open-numbers/ddf--gapminder--billionaires"
+  },
+  "larry-ellison": {
+    "source": "Gapminder",
+    "url": "https://github.com/open-numbers/ddf--gapminder--billionaires"
+  },
+  "bernard-arnault": {
+    "source": "Gapminder",
+    "url": "https://github.com/open-numbers/ddf--gapminder--billionaires"
+  },
+  "rob-walton": {
+    "source": "Gapminder",
+    "url": "https://github.com/open-numbers/ddf--gapminder--billionaires"
+  },
+  "jim-walton": {
+    "source": "Gapminder",
+    "url": "https://github.com/open-numbers/ddf--gapminder--billionaires"
+  },
+  "warren-buffett": {
+    "source": "Gapminder",
+    "url": "https://github.com/open-numbers/ddf--gapminder--billionaires"
+  },
+  "amancio-ortega": {
+    "source": "Gapminder",
+    "url": "https://github.com/open-numbers/ddf--gapminder--billionaires"
+  },
+  "alice-walton": {
+    "source": "Gapminder",
+    "url": "https://github.com/open-numbers/ddf--gapminder--billionaires"
+  },
+  "carlos-slim-helu": {
+    "source": "Gapminder",
+    "url": "https://github.com/open-numbers/ddf--gapminder--billionaires"
+  },
+  "steve-ballmer": {
+    "source": "Gapminder",
+    "url": "https://github.com/open-numbers/ddf--gapminder--billionaires"
+  },
+  "michael-bloomberg": {
+    "source": "Gapminder",
+    "url": "https://github.com/open-numbers/ddf--gapminder--billionaires"
+  },
+  "bill-gates": {
+    "source": "Gapminder",
+    "url": "https://github.com/open-numbers/ddf--gapminder--billionaires"
+  },
+  "mukesh-ambani": {
+    "source": "Gapminder",
+    "url": "https://github.com/open-numbers/ddf--gapminder--billionaires"
+  },
+  "charles-koch": {
+    "source": "Gapminder",
+    "url": "https://github.com/open-numbers/ddf--gapminder--billionaires"
+  },
+  "zhang-yiming": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Zhang_Yiming"
+  },
+  "ma-huateng": {
+    "source": "Gapminder",
+    "url": "https://github.com/open-numbers/ddf--gapminder--billionaires"
+  },
+  "li-ka-shing": {
+    "source": "Gapminder",
+    "url": "https://github.com/open-numbers/ddf--gapminder--billionaires"
+  },
+  "aliko-dangote": {
+    "source": "Gapminder",
+    "url": "https://github.com/open-numbers/ddf--gapminder--billionaires"
+  },
+  "gina-rinehart": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Gina_Rinehart"
+  },
+  "lei-jun": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Lei_Jun"
+  },
+  "stanley-kroenke": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Stan_Kroenke"
+  },
+  "roman-abramovich": {
+    "source": "Gapminder",
+    "url": "https://github.com/open-numbers/ddf--gapminder--billionaires"
+  },
+  "william-ackman": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Bill_Ackman"
+  },
+  "markus-persson": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Markus_Persson"
+  },
+  "jensen-huang": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Jensen_Huang"
+  },
+  "michael-dell": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Michael_Dell"
+  },
+  "changpeng-zhao": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Changpeng_Zhao"
+  },
+  "julia-koch": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Julia_Koch"
+  },
+  "gautam-adani-1": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Gautam_Adani"
+  },
+  "ken-griffin": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Ken_Griffin"
+  },
+  "masayoshi-son": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Masayoshi_Son"
+  },
+  "stephen-schwarzman": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Stephen_A._Schwarzman"
+  },
+  "miriam-adelson": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Miriam_Adelson"
+  },
+  "eric-schmidt": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Eric_Schmidt"
+  },
+  "eduardo-saverin": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Eduardo_Saverin"
+  },
+  "abigail-johnson": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Abigail_Johnson"
+  },
+  "melinda-french-gates": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Melinda_French_Gates"
+  },
+  "jack-ma": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Jack_Ma"
+  },
+  "peter-thiel": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Peter_Thiel"
+  },
+  "phil-knight": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Phil_Knight"
+  },
+  "david-tepper": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/David_Tepper"
+  },
+  "steve-cohen": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Steve_Cohen_(businessman)"
+  },
+  "rupert-murdoch": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Rupert_Murdoch"
+  },
+  "jerry-jones": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Jerry_Jones"
+  },
+  "james-ratcliffe": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Jim_Ratcliffe"
+  },
+  "patrick-collison": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Patrick_Collison"
+  },
+  "john-collison": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/John_Collison"
+  },
+  "jan-koum": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Jan_Koum"
+  },
+  "ray-dalio": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Ray_Dalio"
+  },
+  "james-dyson": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/James_Dyson"
+  },
+  "shahid-khan": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Shahid_Khan"
+  },
+  "ralph-lauren-family": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Ralph_Lauren"
+  },
+  "alisher-usmanov": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Alisher_Usmanov"
+  },
+  "robert-kraft": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Robert_Kraft"
+  },
+  "laurene-powell-jobs": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Laurene_Powell_Jobs"
+  },
+  "tilman-fertitta": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Tilman_Fertitta"
+  },
+  "arthur-blank": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Arthur_Blank"
+  },
+  "david-geffen": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/David_Geffen"
+  },
+  "brian-chesky": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Brian_Chesky"
+  },
+  "brian-armstrong": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Brian_Armstrong_(businessman)"
+  },
+  "howard-lutnick": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Howard_Lutnick"
+  },
+  "dario-amodei": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Dario_Amodei"
+  },
+  "george-soros": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/George_Soros"
+  },
+  "marc-benioff": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Marc_Benioff"
+  },
+  "steven-spielberg": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Steven_Spielberg"
+  },
+  "donald-trump": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Donald_Trump"
+  },
+  "mark-cuban": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Mark_Cuban"
+  },
+  "jack-dorsey": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Jack_Dorsey"
+  },
+  "josh-kushner": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Joshua_Kushner"
+  },
+  "george-lucas": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/George_Lucas"
+  },
+  "michael-jordan": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Michael_Jordan"
+  },
+  "carl-icahn": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Carl_Icahn"
+  },
+  "michael-saylor": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Michael_J._Saylor"
+  },
+  "jb-pritzker": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/JB_Pritzker"
+  },
+  "travis-kalanick": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Travis_Kalanick"
+  },
+  "howard-schultz": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Howard_Schultz"
+  },
+  "sam-altman": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Sam_Altman"
+  },
+  "alexandr-wang": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Alexandr_Wang"
+  },
+  "oprah-winfrey": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Oprah_Winfrey"
+  },
+  "jerry-yang": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Jerry_Yang"
+  },
+  "tim-cook": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Tim_Cook"
+  },
+  "richard-branson": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Richard_Branson"
+  },
+  "jay-z": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Jay-Z"
+  },
+  "reid-hoffman": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Reid_Hoffman"
+  },
+  "thomas-steyer": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Tom_Steyer"
+  },
+  "kevin-systrom": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Kevin_Systrom"
+  },
+  "sheryl-sandberg": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Sheryl_Sandberg"
+  },
+  "howard-marks": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Howard_Marks_(investor)"
+  },
+  "evan-spiegel": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Evan_Spiegel"
+  },
+  "taylor-swift": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Taylor_Swift"
+  },
+  "kim-kardashian": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Kim_Kardashian"
+  },
+  "peter-jackson": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Peter_Jackson"
+  },
+  "marc-andreessen": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Marc_Andreessen"
+  },
+  "lisa-su": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Lisa_Su"
+  },
+  "dick-wolf-1": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Dick_Wolf"
+  },
+  "magic-johnson": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Magic_Johnson"
+  },
+  "sundar-pichai": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Sundar_Pichai"
+  },
+  "tiger-woods": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Tiger_Woods"
+  },
+  "lebron-james": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/LeBron_James"
+  },
+  "stewart-butterfield": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Stewart_Butterfield"
+  },
+  "tyler-perry": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Tyler_Perry"
+  },
+  "kimbal-musk": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Kimbal_Musk"
+  },
+  "sara-blakely": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Sara_Blakely"
+  },
+  "satya-nadella": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Satya_Nadella"
+  },
+  "arnold-schwarzenegger": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Arnold_Schwarzenegger"
+  },
+  "bruce-springsteen": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Bruce_Springsteen"
+  },
+  "james-cameron": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/James_Cameron"
+  },
+  "jerry-seinfeld": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Jerry_Seinfeld"
+  },
+  "jared-kushner": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Jared_Kushner"
+  },
+  "beyonce-knowles-carter": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Beyonc%C3%A9"
+  },
+  "rihanna": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Rihanna"
+  },
+  "kanye-west": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Kanye_West"
+  },
+  "cristiano-ronaldo": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Cristiano_Ronaldo"
+  },
+  "selena-gomez": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Selena_Gomez"
+  },
+  "paul-mccartney": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Paul_McCartney"
+  },
+  "lionel-messi": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Lionel_Messi"
+  },
+  "dwayne-johnson": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Dwayne_Johnson"
+  },
+  "kylie-jenner": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Kylie_Jenner"
+  },
+  "tom-cruise": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Tom_Cruise"
+  },
+  "roger-federer": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Roger_Federer"
+  },
+  "elton-john": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Elton_John"
+  },
+  "serena-williams": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Serena_Williams"
+  },
+  "jennifer-aniston": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Jennifer_Aniston"
+  },
+  "tom-brady": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Tom_Brady"
+  },
+  "lewis-hamilton": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Lewis_Hamilton"
+  },
+  "gordon-ramsay": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Gordon_Ramsay"
+  },
+  "ed-sheeran": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Ed_Sheeran"
+  },
+  "barack-obama": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Barack_Obama"
+  },
+  "billie-eilish": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Billie_Eilish"
+  },
+  "timothee-chalamet": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Timoth%C3%A9e_Chalamet"
+  },
+  "simone-biles": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Simone_Biles"
+  },
+  "zendaya": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Zendaya"
+  },
+  "joe-biden": {
+    "source": "Wikipedia / Wikimedia Commons",
+    "url": "https://en.wikipedia.org/wiki/Joe_Biden"
+  }
+}

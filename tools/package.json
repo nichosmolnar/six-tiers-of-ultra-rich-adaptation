@@ -1,0 +1,12 @@
+{
+  "name": "billionaire-tiers-data",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "data": "node build-data.mjs",
+    "data:no-images": "node build-data.mjs --skip-images"
+  },
+  "devDependencies": {
+    "csv-parse": "^5.5.6"
+  }
+}
