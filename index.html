@@ -79,10 +79,16 @@
       .controls {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         gap: 12px 24px;
         margin-top: 14px;
+        padding: 0 16px 0 var(--plot-inset, 16px);
+      }
+
+      .controls .hint {
+        margin: 0;
+        text-align: left;
       }
 
       .toggle {
@@ -289,6 +295,44 @@
         font-style: italic;
       }
 
+      /* Legend (narrow layouts only) */
+      .legend {
+        list-style: none;
+        margin: 12px 0 0;
+        padding: 0 8px;
+        display: grid;
+        gap: 8px;
+      }
+
+      .legend li {
+        display: grid;
+        grid-template-columns: 32px 1fr;
+        align-items: baseline;
+        gap: 2px 10px;
+        padding: 8px 12px;
+        border-left: 3px solid var(--c);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .legend .lg-tier {
+        grid-row: span 2;
+        font-weight: 700;
+        font-size: 13px;
+        color: var(--c);
+      }
+
+      .legend .lg-range {
+        font-weight: 600;
+        font-size: 13px;
+        color: var(--c);
+      }
+
+      .legend .lg-buys {
+        font-size: 12px;
+        color: var(--ink-dim);
+      }
+
       /* Tooltip */
       .tooltip {
         position: fixed;
@@ -373,13 +417,21 @@
       }
 
       .footer {
-        max-width: 1000px;
+        max-width: 1600px;
         margin: 24px auto 0;
-        padding: 16px clamp(16px, 4vw, 56px) 40px;
+        padding: 16px calc(clamp(8px, 2vw, 32px) + 16px) 40px;
         border-top: 1px solid var(--line);
         color: var(--ink-dim);
         font-size: 12px;
         line-height: 1.6;
+      }
+
+      @media (min-width: 900px) and (min-aspect-ratio: 1/1) {
+        .footer {
+          max-width: none;
+          padding-left: var(--plot-left, clamp(16px, 4vw, 56px));
+          padding-right: var(--plot-left, clamp(16px, 4vw, 56px));
+        }
       }
 
       .inspiration {
@@ -405,14 +457,15 @@
 
     <main>
       <div id="chart" class="chart" aria-label="Bubble chart of net worth by tier"></div>
+      <ul id="legend" class="legend" aria-label="Tier legend" hidden></ul>
       <section class="controls" aria-label="Chart controls">
         <div class="toggle" data-control="size" role="group" aria-label="Bubble size">
           <span>Bubble size</span>
           <button type="button" data-value="equal" aria-pressed="false">Equal</button>
           <button type="button" data-value="worth" class="active" aria-pressed="true">By net worth</button>
         </div>
+        <p class="hint">Click a tier band to hide or show it. Hover or tap a bubble for details.</p>
       </section>
-      <p class="hint">Click a tier band to hide or show it. Hover or tap a bubble for details.</p>
     </main>
 
     <div id="tooltip" class="tooltip" role="status" aria-live="polite" hidden></div>

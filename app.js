@@ -3,12 +3,12 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 // ---- Tiers and formatting ----
 
 const TIERS = [
-  { id: 1, min: 1e7, max: 1e8, label: "$10M-$100M", buys: "Luxury homes, first class", color: "#3fd0c9" },
-  { id: 2, min: 1e8, max: 1e9, label: "$100M-$1B", buys: "Jet charters, family offices", color: "#b57bff" },
-  { id: 3, min: 1e9, max: 1e10, label: "$1B-$10B", buys: "Private jets, trophy mansions", color: "#d6e04a" },
-  { id: 4, min: 1e10, max: 1e11, label: "$10B-$100B", buys: "Mega yachts, sports teams", color: "#3fb0ff" },
-  { id: 5, min: 1e11, max: 1e12, label: "$100B-$1T", buys: "Trophy media platforms", color: "#ff8a4c" },
-  { id: 6, min: 1e12, max: Infinity, label: "$1T+", buys: "Elections, space, AI", color: "#ff4d4d" },
+  { id: 1, min: 1e7, max: 1e8, label: "$10M-$100M", buys: "Can buy luxury homes and cars, first class air travel", color: "#3fd0c9" },
+  { id: 2, min: 1e8, max: 1e9, label: "$100M-$1B", buys: "Can buy jet charters, family offices", color: "#b57bff" },
+  { id: 3, min: 1e9, max: 1e10, label: "$1B-$10B", buys: "Can buy private jets, trophy mansions", color: "#d6e04a" },
+  { id: 4, min: 1e10, max: 1e11, label: "$10B-$100B", buys: "Can buy mega yachts, sports teams", color: "#3fb0ff" },
+  { id: 5, min: 1e11, max: 1e12, label: "$100B-$1T", buys: "Can buy trophy media platforms", color: "#ff8a4c" },
+  { id: 6, min: 1e12, max: Infinity, label: "$1T+", buys: "Can buy elections, space, AI", color: "#ff4d4d" },
 ];
 
 // Axis runs a little past the tier edges so bubbles at $10M aren't clipped and the $1T+ band has room.
@@ -124,6 +124,30 @@ const displayName = (name) => name.replace(/\s*&\s*family$/i, "");
 
 const tierColor = (person) => TIERS[person.tier - 1].color;
 
+// Word-wraps an SVG text into tspans; hides it if it needs more than maxLines.
+function wrapText(textSel, str, maxWidth, maxLines) {
+  const x = textSel.attr("x");
+  textSel.attr("display", null).text(null);
+  const lines = [];
+  let line = [];
+  let tspan = textSel.append("tspan").attr("x", x);
+  for (const word of str.split(/\s+/)) {
+    line.push(word);
+    tspan.text(line.join(" "));
+    if (line.length > 1 && tspan.node().getComputedTextLength() > maxWidth) {
+      line.pop();
+      tspan.text(line.join(" "));
+      lines.push(tspan);
+      line = [word];
+      tspan = textSel.append("tspan").attr("x", x).text(word);
+    }
+  }
+  lines.push(tspan);
+  lines.forEach((t, i) => t.attr("dy", i ? "1.3em" : 0));
+  const fits = lines.length <= maxLines && lines.every((t) => t.node().getComputedTextLength() <= maxWidth);
+  if (!fits) textSel.attr("display", "none");
+}
+
 /**
  * Horizontal beeswarm of people on a log net-worth axis.
  * Tier bands sit behind the bubbles and toggle their tier on click.
@@ -138,6 +162,7 @@ function createChart(container, people, { onHover, onSelect, onLayout } = {}) {
   let nodes = [];
   let width = 0;
   let height = 0;
+  let compact = false; // narrow layout: bands show only the tier label; range and buys move to the legend
   let margin;
   let v; // value scale: net worth -> pixel along the value axis
 
@@ -178,7 +203,8 @@ function createChart(container, people, { onHover, onSelect, onLayout } = {}) {
     width = container.clientWidth;
     const r = radiusFn();
 
-    margin = { top: 92, right: 16, bottom: 48, left: 16 };
+    compact = width <= 640;
+    margin = { top: compact ? 40 : 112, right: 16, bottom: 48, left: 16 };
     v = d3.scaleLog().domain([DOMAIN_MIN, DOMAIN_MAX]).range([margin.left, width - margin.right]).clamp(true);
 
     const prevById = new Map(nodes.map((n) => [n.id, n]));
@@ -219,7 +245,7 @@ function createChart(container, people, { onHover, onSelect, onLayout } = {}) {
     drawBubbles();
     positionAll();
     applyActive();
-    onLayout?.({ plotLeft: Math.max(v(TIERS[0].min), margin.left) });
+    onLayout?.({ plotLeft: Math.max(v(TIERS[0].min), margin.left), compact });
   }
 
   function drawBubbles() {
@@ -338,7 +364,7 @@ function createChart(container, people, { onHover, onSelect, onLayout } = {}) {
       const b = zv(Math.min(t.max, DOMAIN_MAX));
       const x0 = Math.max(Math.min(a, b), margin.left);
       const x1 = Math.min(Math.max(a, b), width - margin.right);
-      const y0 = 6;
+      const y0 = compact ? 26 : 46;
       const y1 = height - margin.bottom;
       const visible = x1 - x0 > 2;
       g.attr("display", visible ? null : "none");
@@ -363,9 +389,20 @@ function createChart(container, people, { onHover, onSelect, onLayout } = {}) {
 
       const cx = (x0 + x1) / 2;
       const bw = x1 - x0;
-      label.attr("x", cx).attr("y", y0 + 22).attr("text-anchor", "middle").text(bw < 110 ? `T${t.id}` : `Tier ${t.id}`);
-      range.attr("x", cx).attr("y", y0 + 40).attr("text-anchor", "middle").attr("display", bw < 60 ? "none" : null).text(t.label);
-      buys.attr("x", cx).attr("y", y0 + 58).attr("text-anchor", "middle").attr("display", bw < 150 ? "none" : null).text(t.buys);
+      label.attr("x", cx).attr("y", 16).attr("text-anchor", "middle").text(compact || bw < 110 ? `T${t.id}` : `Tier ${t.id}`);
+      if (compact) {
+        range.attr("display", "none");
+        buys.attr("display", "none");
+      } else {
+        range.attr("x", cx).attr("y", 34).attr("text-anchor", "middle").attr("display", null).style("font-size", null).text(t.label);
+        const rangeW = range.node().getComputedTextLength();
+        if (rangeW > bw - 4) {
+          const size = (13 * (bw - 4)) / rangeW;
+          if (size < 8) range.attr("display", "none");
+          else range.style("font-size", `${size}px`);
+        }
+        wrapText(buys.attr("x", cx).attr("y", y0 + 18).attr("text-anchor", "middle"), t.buys, bw - 16, 3);
+      }
 
       const showNote = empty && t.id === 6 && bw > 84;
       const nx = cx;
@@ -397,6 +434,7 @@ function createChart(container, people, { onHover, onSelect, onLayout } = {}) {
     gAxis
       .attr("transform", `translate(0,${height - margin.bottom})`)
       .call(d3.axisBottom(zv).tickValues(ticks).tickFormat(formatMoney).tickSizeOuter(0));
+    gAxis.select(".domain").attr("d", `M${zv(TIERS[0].min)},0H${zv.range()[1]}`);
     axisTitle.attr("x", width / 2).attr("y", height - 8);
     axisTitle.text("Net worth (log scale)");
   }
@@ -483,13 +521,24 @@ async function init() {
   const syncPlotLeft = () => {
     const left = $("#chart").getBoundingClientRect().left + window.scrollX + plotLeft;
     document.documentElement.style.setProperty("--plot-left", `${Math.round(left)}px`);
+    document.documentElement.style.setProperty("--plot-inset", `${Math.round(plotLeft)}px`);
   };
   window.addEventListener("resize", syncPlotLeft);
+
+  $("#legend").innerHTML = TIERS.map(
+    (t) => `
+      <li style="--c: ${t.color}">
+        <span class="lg-tier">T${t.id}</span>
+        <span class="lg-range">${t.label}</span>
+        <span class="lg-buys">${t.buys}</span>
+      </li>`,
+  ).join("");
 
   const chart = createChart($("#chart"), people, {
     onLayout(info) {
       plotLeft = info.plotLeft;
       syncPlotLeft();
+      $("#legend").hidden = !info.compact;
     },
     onHover(p, event) {
       if (pinned) return;
